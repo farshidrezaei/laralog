@@ -22,7 +22,7 @@ php artisan vendor:publish --provider="FarshidRezaei\LaraLog"
 
 ## Documentation
 
-####Configs
+###Configs
 in the `configs/laralog.php` you can set the log drivers;
 
 ```php
@@ -33,14 +33,14 @@ in the `configs/laralog.php` you can set the log drivers;
      
 >if `file_driver' => true` , logs file will created, logs will submit in log file in "storage/app/LaraLog/" and if `db_driver===false`, submit method return string of submitted log line in the log file.
 
-####Create table
+###Create table
 after install package and set configs,for create logs table, run 
 
 ```bash
 php artisan migrate
 ```
  
- ####Usage
+###Usage
  you can use this syntax to submit logs:
 
 ```php
@@ -57,7 +57,7 @@ for easy usage, you can use helper function, too:
 ```php
 laralog()
     ->level( 'info')
-    ->subject( 'Create Product' )
+    ->subject( 'Product' )
     ->message( "Product [$product->title]($product->id) created." )
     ->user( true )
     ->submit();
@@ -67,7 +67,7 @@ you can access to submitted log :
 ```php
 $log = laralog()
        ->level( 'info')
-       ->subject( 'Create Product' )
+       ->subject( 'Product' )
        ->message( "Product Created" )
        ->user( false )
        ->submit();
@@ -78,8 +78,8 @@ Assuming `db_driver===true` in `configs/laralog.php`, $log is equal to :
 {
     "id": 1,
     "level": "info",
-    "subject": "Create Product",
-    "message": "Product [Asus G551JW](23)  created.",
+    "subject": "Product",
+    "message": "Product created.",
     "user_id": null
 }
 ```
