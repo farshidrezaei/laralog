@@ -1,0 +1,17 @@
+{
+  "name": "farshidrezaei/laralog",
+  "description": "a Laravel package which help you to submit your application actions",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Farshid Rezaei",
+      "email": "farshid.net1@yahoo.com"
+    }
+  ],
+  "require": {},
+  "autoload": {
+    "psr-4": {
+      "farshidrezaei\\file-uploader\\": "src/"
+    }
+  }
+}
