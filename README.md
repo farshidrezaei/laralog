@@ -44,7 +44,7 @@ php artisan migrate
  you can use this syntax to submit logs:
 
 ```php
-FileUploader::new()
+LaraLog::new()
     ->level( /* 'info', 'success', 'warning', 'danger' */) //default:'info'
     ->subject( 'Subject of the action' ) //nullable
     ->message( 'Message of the action' ) //nullable
