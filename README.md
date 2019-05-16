@@ -22,7 +22,7 @@ php artisan vendor:publish --provider="FarshidRezaei\LaraLog"
 
 ## Documentation
 
-###Configs
+### Configs
 in the `configs/laralog.php` you can set the log drivers;
 
 ```php
@@ -33,14 +33,14 @@ in the `configs/laralog.php` you can set the log drivers;
      
 >if `file_driver' => true` , logs file will created, logs will submit in log file in "storage/app/LaraLog/" and if `db_driver===false`, submit method return string of submitted log line in the log file.
 
-###Create table
+### Create table
 after install package and set configs,for create logs table, run 
 
 ```bash
 php artisan migrate
 ```
  
-###Usage
+### Usage
  you can use this syntax to submit logs:
 
 ```php
