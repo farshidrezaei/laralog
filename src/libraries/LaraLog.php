@@ -19,10 +19,6 @@ class LaraLog
     protected $user_id;
 
     /**
-     * @param      $level
-     * @param      $message
-     * @param bool $has_user
-     *
      * @return LaraLog
      */
     public static function new()
@@ -93,17 +89,18 @@ class LaraLog
         return $this;
     }
 
+    /**
+     * @return LaraLogModel|string
+     */
     public function submit()
     {
-
         if ( $this->canAddLogToFile() ) {
             $log_line = $this->addLogToFile();
             if ( ! $this->canAddLogToDb() ) return $log_line;
+
         }
-
         if ( $this->canAddLogToDb() ) return $this->addLogToDb();
-
-
+        return "please use file and (or) database drivers from configs.";
     }
 
     protected function isAjax()
@@ -111,6 +108,9 @@ class LaraLog
         return ( request()->ajax() );
     }
 
+    /**
+     *
+     */
     protected function setUserId()
     {
         $this->user_id = $this->has_user ? Auth::guard( $this->isAjax() ? 'api' : 'web' )->id() : '';
